@@ -1,0 +1,30 @@
+{{!-- Hiện câu lệnh sql  --}}
+<div class = ".container-fluid p-3 my-3 bg-dark text-white d-flex justify-content-center flex-wrap">
+    <h5>SELECT * FROM account WHERE username = '</h5>
+    <h5 class = "text-primary " id = "unSql">username</h5>
+    <h5>' AND password = '</h5>    
+    <h5 class = "text-primary " id = "pSql">password</h5>
+    <h5>' LIMIT 1</h5>
+</div>
+
+{{!-- Hiện đăng nhập --}}
+<div class = "container-sm">
+    <h1 class = "text-center">Login</h1>
+    <form method="POST" class="">
+
+        <div class="mb-3 w-50 mx-auto">
+            <label for="Username" class="form-label">Username:</label>
+            <input name="username" type="text" class="form-control" id="Username" required>
+        </div>
+
+        <div class="mb-3 mx-auto w-50">
+            <label for="Password" class="form-label">Password:</label>
+            <input name="password" type="password" class="form-control" id="Password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary mx-auto d-block w-50" id="button">Sign in</button>
+    </form>
+</div>
+
+{{!-- Liên kết js --}}
+<script type="text/javascript" src="/js/showLoginSql.js"></script>

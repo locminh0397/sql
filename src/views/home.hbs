@@ -1,0 +1,38 @@
+{{!-- Hiện câu lệnh sql  --}}
+<div class = ".container-fluid p-3 my-3 bg-dark text-white d-flex justify-content-center flex-wrap">
+    <h5>SELECT * FROM products WHERE name LIKE '%</h5>
+    <h5 class = "text-primary " id = "sSql">search</h5>
+    <h5>%'</h5>    
+</div>
+
+{{!-- Thanh tìm kiếm --}}
+<div class = "container-sm mt-3">
+    <form method="POST" class="d-flex justify-content-between">
+        <div class="flex-grow-1">
+            <input name="search" type="text" class="form-control" id="Search" placeholder="Nhập tên xe">
+        </div>
+
+        <button type="submit" class="btn btn-success ms-4" id="button">Search</button>
+    </form>
+</div>
+
+{{!-- Các item --}}
+<div class = "container-sm mt-3">
+    <div class="row">
+        {{#each products}}
+            <div class="col-sm-6 col-lg-3">
+                <div class="card" style="width: 18rem; border: 0;">
+                    <img class="card-img-top" src="/images/{{this.url_image}}" alt="{{this.url_image}}">
+                    <div class="card-body px-0">
+                        <h5 class="card-title">{{this.name}}</h5>
+                        <p class="card-text">$ {{this.cost}}</p>
+                        <a href="" class="btn btn-primary d-block" style="font-size: 1.13rem;">View details</a>
+                    </div>
+                </div>            
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+{{!-- Liên kết js --}}
+<script type="text/javascript" src="/js/showHoneSql.js"></script>
